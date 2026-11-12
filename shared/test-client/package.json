@@ -1,0 +1,22 @@
+{
+  "name": "@roster-lock/smart-contract-test-client",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "In-memory contract harness for browser checks and tests",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./client": {
+      "types": "./src/client.ts",
+      "default": "./src/client.ts"
+    }
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.5.13",
+    "@roster-lock/smart-contract": "*",
+    "@roster-lock/smart-contract-client-builder": "*"
+  }
+}

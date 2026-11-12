@@ -1,0 +1,18 @@
+{
+  "name": "@roster-lock/match-making-cloudflare",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Cloudflare surface for match makers: runner, history and deployment interface",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@roster-lock/match-making": "*",
+    "@roster-lock/reviewed-versions": "*",
+    "@roster-lock/smart-contract": "*"
+  }
+}

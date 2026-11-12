@@ -1,0 +1,28 @@
+{
+  "name": "@roster-lock/discovery",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "main": "./server/src/index.ts",
+  "types": "./server/src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./server/src/index.ts",
+      "default": "./server/src/index.ts"
+    },
+    "./client": {
+      "types": "./client/src/index.ts",
+      "default": "./client/src/index.ts"
+    },
+    "./server": {
+      "types": "./server/src/index.ts",
+      "default": "./server/src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@roster-lock/smart-contract": "*",
+    "hono": "^4.13.16",
+    "pg": "^8.23.1",
+    "@roster-lock/reviewed-versions": "*"
+  }
+}

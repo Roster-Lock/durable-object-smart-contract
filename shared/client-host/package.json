@@ -1,0 +1,24 @@
+{
+  "name": "@roster-lock/smart-contract-client-host",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Sandboxed iframe host and postMessage bridge for custom Roster Lock clients",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./fake": {
+      "types": "./src/fake.ts",
+      "default": "./src/fake.ts"
+    },
+    "./runtime-entry": {
+      "types": "./src/runtime-entry.ts",
+      "default": "./src/runtime-entry.ts"
+    }
+  },
+  "dependencies": {
+    "@roster-lock/smart-contract-sdk": "*"
+  }
+}

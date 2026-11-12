@@ -1,0 +1,17 @@
+{
+  "name": "@roster-lock/living-roster-cloudflare",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Cloudflare surface for living rosters: Durable Object, Hyperdrive, deploy and call",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@roster-lock/reviewed-versions": "*",
+    "@roster-lock/smart-contract": "*"
+  }
+}

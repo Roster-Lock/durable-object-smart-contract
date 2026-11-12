@@ -1,0 +1,31 @@
+{
+  "name": "@roster-lock/smart-contract-client-builder",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Node/CI build service for custom Roster Lock clients",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./validator": {
+      "types": "./src/validator.ts",
+      "default": "./src/validator.ts"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@roster-lock/smart-contract": "*",
+    "@vue/compiler-sfc": "^3.5.44",
+    "acorn": "^8.19.0",
+    "acorn-walk": "^8.3.5",
+    "esbuild": "^0.28.2",
+    "rollup": "^4.67.2"
+  },
+  "devDependencies": {
+    "vue": "^3.5.44"
+  }
+}

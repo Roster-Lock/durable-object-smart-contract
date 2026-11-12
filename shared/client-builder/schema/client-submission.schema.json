@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://roster-lock.example/schemas/client-submission.schema.json",
+  "title": "Roster Lock custom client submission",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "name", "version", "entry", "framework"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "name": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$" },
+    "entry": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)[^/].*$"
+    },
+    "framework": { "enum": ["react", "vue", "svelte", "angular", "vanilla"] },
+    "dependencies": {
+      "type": "object",
+      "maxProperties": 100,
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^[0-9A-Za-z.*^~<>=|xX -]+$"
+      },
+      "propertyNames": {
+        "pattern": "^(?:@[a-z0-9][a-z0-9._~-]*/)?[a-z0-9][a-z0-9._~-]*$"
+      }
+    },
+    "jsxImportSource": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "description": { "type": "string", "maxLength": 2000 },
+    "budgets": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "maxPreOptimizationBytes": { "type": "integer", "minimum": 1 },
+        "maxBundleBytes": { "type": "integer", "minimum": 1 }
+      }
+    }
+  }
+}

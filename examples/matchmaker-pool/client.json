@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "name": "matchmaker-pool-client",
+  "version": "1.0.0",
+  "entry": "client.tsx",
+  "framework": "react",
+  "description": "Ladder and recent-match UI for the pool matchmaker example.",
+  "dependencies": {
+    "@roster-lock/smart-contract-sdk": "0.1.0"
+  }
+}

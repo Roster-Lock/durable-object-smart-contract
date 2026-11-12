@@ -1,0 +1,16 @@
+{
+  "name": "@roster-lock/reviewed-versions",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Reviewed/whitelisted living-roster and matchmaker versions",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@roster-lock/smart-contract": "*"
+  }
+}

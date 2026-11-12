@@ -1,0 +1,26 @@
+{
+  "name": "@roster-lock/match-making-client",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Matchmaker card and ranked table for match-making clients",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./model": {
+      "types": "./src/model.ts",
+      "default": "./src/model.ts"
+    }
+  },
+  "dependencies": {
+    "@roster-lock/smart-contract-sdk": "*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5"
+  }
+}

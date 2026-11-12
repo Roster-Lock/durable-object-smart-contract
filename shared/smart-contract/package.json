@@ -1,0 +1,39 @@
+{
+  "name": "@roster-lock/smart-contract",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./postgres": {
+      "types": "./src/sql/postgres.ts",
+      "default": "./src/sql/postgres.ts"
+    },
+    "./cloudflare": {
+      "types": "./src/durable-object.ts",
+      "default": "./src/durable-object.ts"
+    },
+    "./validator": {
+      "types": "./src/validator.ts",
+      "default": "./src/validator.ts"
+    },
+    "./builder": {
+      "types": "./src/builder.ts",
+      "default": "./src/builder.ts"
+    }
+  },
+  "dependencies": {
+    "@cfworker/json-schema": "^4.1.4",
+    "@jitl/quickjs-wasmfile-release-sync": "^0.32.0",
+    "acorn": "^8.19.0",
+    "acorn-walk": "^8.3.5",
+    "esbuild": "^0.28.2",
+    "pg": "^8.23.1",
+    "quickjs-emscripten": "^0.32.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@roster-lock/living-roster",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "main": "./tools/src/index.ts",
+  "types": "./tools/src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./tools/src/index.ts",
+      "default": "./tools/src/index.ts"
+    },
+    "./build": {
+      "types": "./tools/src/build.ts",
+      "default": "./tools/src/build.ts"
+    }
+  },
+  "dependencies": {
+    "@roster-lock/smart-contract": "*"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@roster-lock/share-approved",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Example marketplace app: share a repo, review a commit, adopt it into a roster",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./app": {
+      "types": "./src/app.ts",
+      "default": "./src/app.ts"
+    },
+    "./workflow": {
+      "types": "./src/workflow.ts",
+      "default": "./src/workflow.ts"
+    }
+  },
+  "dependencies": {
+    "@roster-lock/discovery": "*",
+    "@roster-lock/living-roster-cloudflare": "*",
+    "@roster-lock/match-making-cloudflare": "*",
+    "@roster-lock/reviewed-versions": "*",
+    "hono": "^4.13.16"
+  }
+}

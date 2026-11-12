@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://roster-lock.example/schemas/client-build-manifest.schema.json",
+  "title": "Roster Lock immutable client build manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "buildId",
+    "name",
+    "version",
+    "entry",
+    "framework",
+    "builderVersion",
+    "sourceHash",
+    "lockfileHash",
+    "bundleHash",
+    "bundleBytes",
+    "preOptimizationBytes",
+    "assets",
+    "packages",
+    "bundleUrl",
+    "documentUrl",
+    "createdAt",
+    "warnings",
+    "budgetPolicy"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "buildId": { "type": "string", "pattern": "^b_[a-f0-9]{32}$" },
+    "name": { "type": "string", "minLength": 1 },
+    "version": { "type": "string", "minLength": 1 },
+    "entry": { "type": "string", "minLength": 1 },
+    "framework": { "enum": ["react", "vue", "svelte", "angular", "vanilla"] },
+    "builderVersion": { "type": "string", "minLength": 1 },
+    "sourceHash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "lockfileHash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "bundleHash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "bundleBytes": { "type": "integer", "minimum": 0 },
+    "preOptimizationBytes": { "type": "integer", "minimum": 0 },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "key", "url", "hash", "bytes", "contentType"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "key": { "type": "string", "pattern": "^b_[a-f0-9]{32}/assets/" },
+          "url": { "type": "string", "pattern": "^\\./assets/" },
+          "hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+          "bytes": { "type": "integer", "minimum": 0 },
+          "contentType": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "packages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "version"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "version": { "type": "string", "minLength": 1 },
+          "integrity": { "type": "string" },
+          "tarballHash": { "type": "string" },
+          "dependencies": {
+            "type": "object",
+            "additionalProperties": { "type": "string" }
+          }
+        }
+      }
+    },
+    "bundleUrl": { "const": "./bundle.js" },
+    "documentUrl": { "const": "./index.html" },
+    "createdAt": { "type": "integer", "minimum": 0 },
+    "warnings": { "type": "array", "items": { "type": "string" } },
+    "budgetPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit",
+        "gzip",
+        "preOptimization",
+        "finalBundle",
+        "assetsCountedInJsBudget",
+        "assets"
+      ],
+      "properties": {
+        "unit": { "const": "raw-bytes" },
+        "gzip": { "const": false },
+        "preOptimization": { "const": "unminified-esbuild-bundle" },
+        "finalBundle": { "const": "minified-rollup-iife" },
+        "assetsCountedInJsBudget": { "const": false },
+        "assets": { "const": "separate-per-file-and-total-limits" }
+      }
+    }
+  }
+}
