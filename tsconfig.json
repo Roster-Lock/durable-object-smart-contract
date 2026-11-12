@@ -1,0 +1,149 @@
+{
+  "compilerOptions": {
+    "target": "es2024",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "types": [
+      "@cloudflare/workers-types",
+      "node"
+    ],
+    "lib": [
+      "es2024",
+      "dom",
+      "dom.iterable"
+    ],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "baseUrl": ".",
+    "paths": {
+      "@roster-lock/smart-contract-test-client/client": [
+        "shared/test-client/src/client.ts"
+      ],
+      "@roster-lock/smart-contract-test-client": [
+        "shared/test-client/src/index.ts"
+      ],
+      "@roster-lock/smart-contract/validator": [
+        "shared/smart-contract/src/validator.ts"
+      ],
+      "@roster-lock/smart-contract/builder": [
+        "shared/smart-contract/src/builder.ts"
+      ],
+      "@roster-lock/smart-contract/postgres": [
+        "shared/smart-contract/src/sql/postgres.ts"
+      ],
+      "@roster-lock/smart-contract/cloudflare": [
+        "shared/smart-contract/src/durable-object.ts"
+      ],
+      "@roster-lock/smart-contract": [
+        "shared/smart-contract/src/index.ts"
+      ],
+      "@roster-lock/living-roster/build": [
+        "living-roster/tools/src/build.ts"
+      ],
+      "@roster-lock/living-roster-test-client": [
+        "living-roster/test-client/src/index.ts"
+      ],
+      "@roster-lock/living-roster-cloudflare": [
+        "living-roster/cloudflare/src/index.ts"
+      ],
+      "@roster-lock/living-roster": [
+        "living-roster/tools/src/index.ts"
+      ],
+      "@roster-lock/match-making/build": [
+        "match-making/tools/src/build.ts"
+      ],
+      "@roster-lock/match-making-test-client": [
+        "match-making/test-client/src/index.ts"
+      ],
+      "@roster-lock/match-making-cloudflare": [
+        "match-making/cloudflare/src/index.ts"
+      ],
+      "@roster-lock/match-making-client/model": [
+        "match-making/client/src/model.ts"
+      ],
+      "@roster-lock/match-making-client": [
+        "match-making/client/src/index.ts"
+      ],
+      "@roster-lock/match-making": [
+        "match-making/tools/src/index.ts"
+      ],
+      "@roster-lock/discovery/client": [
+        "marketplace/discovery/client/src/index.ts"
+      ],
+      "@roster-lock/discovery/server": [
+        "marketplace/discovery/server/src/index.ts"
+      ],
+      "@roster-lock/discovery": [
+        "marketplace/discovery/server/src/index.ts"
+      ],
+      "@roster-lock/share-approved/app": [
+        "marketplace/share-approved/src/app.ts"
+      ],
+      "@roster-lock/share-approved/workflow": [
+        "marketplace/share-approved/src/workflow.ts"
+      ],
+      "@roster-lock/share-approved": [
+        "marketplace/share-approved/src/index.ts"
+      ],
+      "@roster-lock/deployed-types": [
+        "shared/deployed-types/src/index.ts"
+      ],
+      "@roster-lock/smart-contract-sdk": [
+        "shared/sdk/src/index.ts"
+      ],
+      "@roster-lock/smart-contract-sdk/react": [
+        "shared/sdk/src/react/index.ts"
+      ],
+      "@roster-lock/smart-contract-client-builder": [
+        "shared/client-builder/src/index.ts"
+      ],
+      "@roster-lock/smart-contract-client-builder/validator": [
+        "shared/client-builder/src/validator.ts"
+      ],
+      "@roster-lock/smart-contract-client-host": [
+        "shared/client-host/src/index.ts"
+      ],
+      "@roster-lock/smart-contract-client-host/fake": [
+        "shared/client-host/src/fake.ts"
+      ],
+      "@roster-lock/smart-contract-sdk/rjsf": [
+        "shared/sdk/src/rjsf.ts"
+      ],
+      "@roster-lock/smart-contract-client-host/runtime-entry": [
+        "shared/client-host/src/runtime-entry.ts"
+      ],
+      "@roster-lock/living-roster-client": [
+        "living-roster/client/src/index.ts"
+      ],
+      "@roster-lock/living-roster-client/model": [
+        "living-roster/client/src/model.ts"
+      ],
+      "@roster-lock/reviewed-versions": [
+        "shared/review/src/index.ts"
+      ]
+    },
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "shared/**/*.ts",
+    "shared/**/*.tsx",
+    "living-roster/**/*.ts",
+    "living-roster/**/*.tsx",
+    "match-making/**/*.ts",
+    "match-making/**/*.tsx",
+    "marketplace/**/*.ts",
+    "examples/**/*.ts",
+    "examples/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
